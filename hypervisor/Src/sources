@@ -1,0 +1,25 @@
+TARGETNAME=hypervisor
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+INCLUDES=$(INCLUDES);$(DDK_INC_PATH);
+C_DEFINES=$(C_DEFINES) /D_CSTL_BUILD_WIN_DRIVER /DNTSTRSAFE_NO_DEPRECATE
+
+SOURCES=common.c			\
+		cpu.c				\
+		ept.c				\
+		exceptionnmi.c		\
+		main.c				\
+		powercallback.c		\
+		reghelper.c			\
+		shadowhook.c		\
+		vmcall.c			\
+		vmminitstate.c		\
+		vmx.c				\
+		vmxexithandler.c	\
+		amd64\common-asm.asm	\
+		amd64\msr-asm.asm		\
+		amd64\regs-asm.asm		\
+		amd64\vmx-asm.asm
+		
+		

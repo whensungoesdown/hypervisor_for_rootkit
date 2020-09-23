@@ -1,0 +1,17 @@
+TARGETNAME=test
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+INCLUDES=$(INCLUDES);$(DDK_INC_PATH);
+C_DEFINES=$(C_DEFINES) /D_CSTL_BUILD_WIN_DRIVER /DNTSTRSAFE_NO_DEPRECATE
+
+SOURCES=main.c						\
+		ntquerysysteminformation.c	\
+		protectuserpage.c			\
+		amd64\common-asm.asm		\
+		amd64\msr-asm.asm			\
+		amd64\regs-asm.asm			\
+		amd64\vmx-asm.asm			\
+		amd64\trampoline-asm.asm
+		
+		
